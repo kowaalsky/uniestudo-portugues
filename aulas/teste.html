@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dlg{
+            display: flex;
+            flex-direction: row;
+            align-items: end;
+            color: #fff;
+        }
+        .dlg.received{
+            justify-content: flex-end;
+        }
+        .dlg.sent{
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+        }
+        .box{
+            height: auto;
+            width: auto;
+            max-width: 200px;
+            padding: 3px 20px;
+            border-radius: 20px;
+            background-color: blue;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+        .dlg.received .box{
+            border-bottom-left-radius: 0;
+        }
+        .dlg.sent .box{
+            border-bottom-right-radius: 0;
+        }
+        .tri-chat{
+            background-color: transparent;
+            --border-value: 8px;
+            height: 0;
+            width: 0;
+            border-top: calc(var(--border-value) * 1) solid transparent;
+        }
+        .dlg.received .tri-chat{
+            border-right: var(--border-value) solid blue;
+            border-left: var(--border-value) solid transparent;
+        }
+        .dlg.sent .tri-chat{
+            border-right: var(--border-value) solid transparent;
+            border-left: var(--border-value) solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="dialog">
+        <div class="dlg sent">
+            <div class="tri-chat"></div>
+            <div class="box">Oi, o seu gato é lindo!</div>
+        </div>
+    </div>
+</body>
+</html>
